@@ -15,8 +15,7 @@ pytest_cache/
 # VSCode settings
 .vscode/
 
-# Images used for tests
-api/tests/images/
+
 
 # Logs
 *.log
