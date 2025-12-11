@@ -17,7 +17,7 @@ IS_CI = os.getenv("CI") == "true"
 # ====================================================
 # Load Model (skipped in CI)
 # ====================================================
-MODEL_PATH = "best_inception_v3.pth"
+MODEL_PATH = "/app/best_inception_v3.pth"
 
 if not IS_CI:
     model = inception_v3(weights=None, aux_logits=False)
