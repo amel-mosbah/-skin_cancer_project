@@ -30,7 +30,12 @@ function App() {
     );
 
     const data = await response.json();
-    setPrediction(data.predicted_class);
+
+    setPrediction({
+      class: data.predicted_class,
+      description: data.description,
+    });
+
     setLoading(false);
   };
 
@@ -49,7 +54,13 @@ function App() {
       <br /><br />
 
       {loading && <p>Analyse en cours...</p>}
-      {prediction && <h2>Résultat : {prediction}</h2>}
+
+      {prediction && (
+        <div>
+          <h2>Résultat : {prediction.class}</h2>
+          <p>{prediction.description}</p>
+        </div>
+      )}
     </div>
   );
 }
