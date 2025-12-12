@@ -7,7 +7,18 @@ from torchvision import transforms
 from PIL import Image
 import io
 
+# ============= CORS POUR REACT =============
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ====================================================
 # Detect if running in CI (GitHub Actions)
@@ -30,7 +41,6 @@ else:
     print("⚠️ CI detected → Skipping model loading.")
     model = None  # Fake model for CI
 
-
 # ====================================================
 # Image Transform
 # ====================================================
@@ -44,7 +54,6 @@ transform = transforms.Compose([
 ])
 
 class_mapping = ["bkl", "nv", "df", "mel", "vasc", "bcc", "akiec"]
-
 
 # ====================================================
 # Prediction Route
