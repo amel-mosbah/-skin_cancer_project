@@ -55,6 +55,17 @@ transform = transforms.Compose([
 
 class_mapping = ["bkl", "nv", "df", "mel", "vasc", "bcc", "akiec"]
 
+# ================= Description pour chaque classe ==================
+class_description = {
+    "nv": "Naevus bénin — grain de beauté sans danger.",
+    "mel": "Mélanome — cancer agressif de la peau.",
+    "bkl": "Kératose bénigne — lésion non cancéreuse.",
+    "bcc": "Carcinome basocellulaire — forme locale de cancer.",
+    "akiec": "Kératose actinique — lésion précancéreuse.",
+    "df": "Dermatofibrome — petite tumeur bénigne de la peau.",
+    "vasc": "Lésion vasculaire — angiome ou autre anomalie vasculaire."
+}
+
 # ====================================================
 # Prediction Route
 # ====================================================
@@ -75,5 +86,7 @@ async def predict(file: UploadFile = File(...)):
 
     return {
         "filename": file.filename,
-        "predicted_class": predicted_class
+        "predicted_class": predicted_class,
+        "description": class_description[predicted_class]
     }
+
