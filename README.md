@@ -76,6 +76,9 @@ FastAPI REST API
 Dockerized Backend
        │
        ▼
+GitHub Actions — CI/CD
+       │
+       ▼
 Render Deployment
        │
        ▼
