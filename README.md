@@ -1,7 +1,5 @@
 # 🩺 Skin Cancer Detection — End-to-End AI System
 
-![CI](https://github.com/amel-mosbah/-skin_cancer_project/actions/workflows/ci.yml/badge.svg)
-
 An end-to-end Artificial Intelligence application for classifying skin lesions from dermoscopic images using Deep Learning and Transfer Learning.
 
 The project covers the complete AI pipeline, from data preparation and model development to API integration, Dockerization, CI/CD and web deployment.
